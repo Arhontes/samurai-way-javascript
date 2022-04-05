@@ -1,16 +1,18 @@
 
-.dialogsItems{
-    color:black;
+.dialogItems{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    background:bisque ;
+    border: 1px solid transparent;
     padding: 15px;
+    border-radius: 50%;
+}
+.active{
+    color:darkgreen;
     text-decoration: none;
 }
-.dialogsItems .dialog{
- padding: 5px;
-}
-
-.dialogsItems .active{
-    padding: 10px;
-    color: brown;
+.noneActive{
+    color:black;
     text-decoration: none;
 }
-

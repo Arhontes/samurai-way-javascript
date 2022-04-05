@@ -1,9 +1,11 @@
 .header{
   grid-area: h;
-  background-color:blue ;
- }
+  background-color:whitesmoke ;
+    border-bottom: 1px solid black;
+}
  .img{
-   width: 20px;
-   height: 20px;
+     border-radius: 8px;
+   width:content-box;
+   height: 50px;
    
  }

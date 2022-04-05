@@ -9,18 +9,18 @@ let state = {
     },
     dialogsPage: {
         messages: [
-            {id: 1, message: 'Good morning'},
-            {id: 2, message: 'Good morning'},
-            {id: 3, message: 'Good morning'},
-            {id: 4, message: 'Good morning'},
-            {id: 5, message: 'Good morning'}
+            {id: 1, message: 'Good morning!'},
+            {id: 2, message: 'Good afternoon!'},
+            {id: 3, message: 'Good evening!'},
+            {id: 4, message: 'Good night!'},
+            {id: 5, message: 'Good day!'}
         ],
         dialogs: [
             {id: 1, name: 'Sasha'},
-            {id: 2, name: 'Sasha'},
-            {id: 3, name: 'Sasha'},
-            {id: 4, name: 'Sasha'},
-            {id: 5, name: 'Sasha'}
+            {id: 2, name: 'Leha'},
+            {id: 3, name: 'Michael'},
+            {id: 4, name: 'Dobrinya'},
+            {id: 5, name: 'Max'}
         ]
     }
 

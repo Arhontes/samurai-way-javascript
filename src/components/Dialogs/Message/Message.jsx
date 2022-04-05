@@ -3,7 +3,15 @@ import {NavLink} from "react-router-dom";
 
 const Message = (props)=>{
     return (
-        <div key={props.id} className={s.dialog}>{props.message}</div>
+        <ul>
+            <li>
+                <div key={props.id} className={s.message}>{props.message}</div>
+            </li>
+        </ul>
+
+
+
+
     )
 }
 

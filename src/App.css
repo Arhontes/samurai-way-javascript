@@ -1,5 +1,6 @@
 .App {
     text-align: center;
+
 }
 
 .App-logo {
@@ -38,6 +39,7 @@
 }
 
 .app-wrapper {
+    border: 1px solid #ddd;
     display: grid;
     width: 1000px;
     margin: auto;
