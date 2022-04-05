@@ -3,10 +3,10 @@ import s from "./Post.module.css";
 const Post = (props) => {
   
   return (
-    <div className={s.item}>
+    <div key = {props.id} className={s.item}>
       
       <img src="https://w7.pngwing.com/pngs/919/879/png-transparent-computer-icons-ico-miscellaneous-blue-face.png"></img>
-      {props.message}
+        {props.message}
       <button>SomeButton</button>
       <div>
         <span>Like</span>

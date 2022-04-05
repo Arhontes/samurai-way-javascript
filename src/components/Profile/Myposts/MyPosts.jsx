@@ -1,15 +1,15 @@
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import Message from "../../Dialogs/Message/Message";
 
 
+const MyPosts = (props) => {
 
-const MyPosts = () => {
+    let postsElement = props.posts.map(post=><Post message={post.message} /> )
   return (
-    <div>
+    <div >
 
-
-        <Post message='Hi, how are you?' />
-        <Post message="I'm fine,thanks " />
+        {postsElement}
 
     </div>
   );
