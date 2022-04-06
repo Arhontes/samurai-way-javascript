@@ -1,8 +1,15 @@
+import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import Message from "../../Dialogs/Message/Message";
 
-function addPost(){alert('YOO!')}
+let newPostElement = React.createRef();
+function addPost(){
+
+    let text = newPostElement.current.value
+    alert(text)
+}
+
 
 const MyPosts = (props) => {
 
@@ -10,7 +17,11 @@ const MyPosts = (props) => {
   return (
     <div >
         <div>
-            <button onClick={addPost}>Add post
+            <div>
+                <textarea ref={newPostElement}></textarea>
+            </div>
+            <button onClick={addPost}>
+                Add post
             </button>
         </div>
 

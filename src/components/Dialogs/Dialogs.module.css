@@ -5,7 +5,10 @@
     padding: 15px;
 }
 
-
+.buttons{
+    display: flex ;
+    flex-direction: row;
+}
 .messages{
     padding-left: 15px;
    text-align:left;
