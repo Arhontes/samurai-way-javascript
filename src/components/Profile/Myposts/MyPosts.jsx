@@ -3,17 +3,19 @@ import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import Message from "../../Dialogs/Message/Message";
 
-let newPostElement = React.createRef();
-function addPost(){
 
-    let text = newPostElement.current.value
-    alert(text)
-}
 
 
 const MyPosts = (props) => {
+    let newPostElement = React.createRef();
 
-    let postsElement = props.posts.map(post=><Post message={post.message} /> )
+    function addPost(){
+        debugger;
+        let text = newPostElement.current.value
+        props.addPostFunction(text)
+    }
+
+        let postsElement = props.posts.map(post=><Post message={post.message} /> )
   return (
     <div >
         <div>

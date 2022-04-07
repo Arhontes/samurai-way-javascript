@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from "./Redux/state";
+import state, {addPost} from "./Redux/state";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App data={state}/>
+    <App data={state} addPostFunction={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
