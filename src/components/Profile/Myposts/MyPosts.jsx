@@ -10,9 +10,10 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     function addPost(){
-        debugger;
+
         let text = newPostElement.current.value
         props.addPostFunction(text)
+
     }
 
         let postsElement = props.posts.map(post=><Post message={post.message} /> )

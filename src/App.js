@@ -21,6 +21,7 @@ const App = (props) => {
                         <Route path="/profile" element={<Profile
                             posts={props.data}
                             addPostFunction={props.addPostFunction}
+
                         />}
                         />
                     </Routes>
