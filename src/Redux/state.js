@@ -1,4 +1,4 @@
-import {rerenderEntireTree} from "../render";
+import {rerenderEntireTree} from "../rerenderEntireTree";
 
 let state = {
     profilePage: {
@@ -6,7 +6,7 @@ let state = {
             {id: 1, message: 'Hi, how are you?'},
             {id: 2, message: 'I\'m fine,thanks'}
         ],
-
+        newPostText: "Zdarova Sanya!"
 
     },
     dialogsPage: {
@@ -28,10 +28,18 @@ let state = {
 
 }
 
-export let addPost = (postMessage) =>{
-    debugger;
-    let newPost = {id:5, message: postMessage};
-    state.profilePage.posts.push(newPost);
+export let updateNewPostText = (newText)=>{
+    state.profilePage.newPostText=newText;
+
     rerenderEntireTree(state)
 }
+
+export let addPost = () =>{
+
+    let newPost = {id:5, message: state.profilePage.newPostText};
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state)
+}
+
 export default state;

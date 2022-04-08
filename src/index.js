@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state, {addPost} from "./Redux/state";
-import {rerenderEntireTree} from "./render";
+import {rerenderEntireTree} from "./rerenderEntireTree";
 
 /*
     ReactDOM.render(
