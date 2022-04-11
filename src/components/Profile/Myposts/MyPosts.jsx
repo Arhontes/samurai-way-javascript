@@ -2,7 +2,7 @@ import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import Message from "../../Dialogs/Message/Message";
-import {updateNewPostText} from "../../../Redux/state";
+
 
 
 
@@ -11,11 +11,12 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
     let onPostChange=()=>{
         let text= newPostElement.current.value;
-        updateNewPostText(text);
+        props.updateNewPostText(text);
     }
-    function addPost(){
 
-        props.addPostFunction()
+    let addPost=()=>{
+
+        props.addPost()
 
     }
 
