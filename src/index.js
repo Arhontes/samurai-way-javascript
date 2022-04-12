@@ -6,13 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import store from "./Redux/state";
 
 
-let rerenderEntireTree=(prop)=>{
+let rerenderEntireTree=(props)=>{
     ReactDOM.render(
         <React.StrictMode>
-            <App data={prop}
-                 addPost={store.addPost.bind(store)}
-                 updateNewPostText = {store.updateNewPostText.bind(store)}
-                 newText = {prop.profilePage.newPostText}
+            <App data={props}
+                 dispatch = {store.dispatch.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')

@@ -1,44 +1,44 @@
 import React from "react";
-import s from "./MyPosts.module.css";
+
 import Post from "./Post/Post";
-import Message from "../../Dialogs/Message/Message";
-
-
 
 
 
 const MyPosts = (props) => {
+    debugger;
     let newPostElement = React.createRef();
-    let onPostChange=()=>{
-        let text= newPostElement.current.value;
-        props.updateNewPostText(text);
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        let action = {type: 'UPDATE-NEW-POST-TEXT', text: text};
+        props.dispatch(action);
     }
 
-    let addPost=()=>{
+    let addPost = () => {
 
-        props.addPost()
+        props.dispatch({type: 'ADD-POST'})
 
     }
-
-        let postsElement = props.posts.map(post=><Post message={post.message} /> )
-  return (
-    <div >
+debugger;
+    let postsElement = props.posts.profilePage.posts.map(post => <Post message={post.message}/>)
+    return (
         <div>
             <div>
-                <textarea value = {props.newText}
+                <div>
+                <textarea value={props.posts.profilePage.newPostText}
                           onChange={onPostChange}
                           ref={newPostElement}
                 />
+                </div>
+                <button onClick={addPost}>
+                    Add post
+                </button>
             </div>
-            <button onClick={addPost}>
-                Add post
-            </button>
+
+            {postsElement}
+
         </div>
-
-        {postsElement}
-
-    </div>
-  );
+    );
 };
 
 export default MyPosts;

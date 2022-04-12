@@ -7,7 +7,6 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
-
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -20,12 +19,11 @@ const App = (props) => {
                             data={props.data}
                         />}
                         />
-                        <Route path="/profile" element={<Profile
-                            posts={props.data}
-                            addPost={props.addPost}
-                            newText={props.newText}
-                            updateNewPostText ={props.updateNewPostText}
-                        />}
+                        <Route path="/profile" element={
+                            <Profile
+                                posts={props.data}
+                                dispatch={props.dispatch}/>
+                        }
                         />
                     </Routes>
                 </div>
