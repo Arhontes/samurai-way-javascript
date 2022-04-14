@@ -1,4 +1,5 @@
-import message from "../components/Dialogs/Message/Message";
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
 
 const update_newPostText = 'UPDATE-NEW-POST-TEXT';
 const add_post = 'ADD-POST';
@@ -46,49 +47,10 @@ let store = {
         return this._state
     },
     dispatch(action) {
-        if (action.type === add_post) {
-            let newPost = {id: 5, message: this._state.profilePage.newPostText};
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state)
-        } else if (action.type === update_newPostText) {
-            this._state.profilePage.newPostText = action.text;
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._callSubscriber(this._state)
+    }
+}
 
-            this._callSubscriber(this._state)
-        } else if (action.type === update_newMessageText) {
-            this._state.dialogsPage.dataOfCurrentMessage.message = action.newMessage
-            this._callSubscriber(this._state)
-        } else if (action.type === add_message) {
-            this._state.dialogsPage.messages.push({
-                id: action.personId,
-                message: action.message
-            })
-            this._callSubscriber(this._state)
-        }
-    }
-}
-export const sendMessageActionCreator = (personMessage) => {
-    return {
-        type: add_message,
-        personId: personMessage.id,
-        message: personMessage.message
-    }
-}
-export const updateNewPostMessageActionCreator = (message) => {
-    return {
-        type: update_newMessageText,
-        newMessage: message
-    }
-}
-export const updateNewPostTextActionCreator = (text) => {
-    return {
-        type: update_newPostText,
-        text: text
-    }
-}
-export const addPostActionCreator = () => {
-    return {
-        type: add_post
-    }
-}
 export default store;
