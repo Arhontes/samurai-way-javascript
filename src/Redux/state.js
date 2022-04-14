@@ -1,5 +1,9 @@
+import message from "../components/Dialogs/Message/Message";
+
 const update_newPostText = 'UPDATE-NEW-POST-TEXT';
 const add_post = 'ADD-POST';
+const add_message = 'ADD-MESSAGE';
+const update_newMessageText = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
     _state: {
@@ -12,6 +16,7 @@ let store = {
 
         },
         dialogsPage: {
+            dataOfCurrentMessage: {id: 0, message: 'add text here'},
             messages: [
                 {id: 1, message: 'Good morning!'},
                 {id: 2, message: 'Good afternoon!'},
@@ -29,6 +34,7 @@ let store = {
         }
 
     },
+
     _callSubscriber() {
 
     },
@@ -49,17 +55,38 @@ let store = {
             this._state.profilePage.newPostText = action.text;
 
             this._callSubscriber(this._state)
+        } else if (action.type === update_newMessageText) {
+            this._state.dialogsPage.dataOfCurrentMessage.message = action.newMessage
+            this._callSubscriber(this._state)
+        } else if (action.type === add_message) {
+            this._state.dialogsPage.messages.push({
+                id: action.personId,
+                message: action.message
+            })
+            this._callSubscriber(this._state)
         }
     }
 }
-
-export const updateNewPostTextActionCreator = (text)=>{
+export const sendMessageActionCreator = (personMessage) => {
+    return {
+        type: add_message,
+        personId: personMessage.id,
+        message: personMessage.message
+    }
+}
+export const updateNewPostMessageActionCreator = (message) => {
+    return {
+        type: update_newMessageText,
+        newMessage: message
+    }
+}
+export const updateNewPostTextActionCreator = (text) => {
     return {
         type: update_newPostText,
         text: text
     }
 }
-export const addPostActionCreator=()=>{
+export const addPostActionCreator = () => {
     return {
         type: add_post
     }
