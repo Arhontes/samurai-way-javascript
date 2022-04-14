@@ -11,9 +11,9 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef()
     let dialogsElement = props.data.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElement = props.data.dialogsPage.messages.map(message => <Message message={message.message}/>);
-    let updateMessage = () => {
+    let updateMessage = (e) => {
 
-        let textMessage = newMessageElement.current.value
+        let textMessage = e.target.value
         props.dispatch(updateNewPostMessageActionCreator(textMessage))
     }
     let sendMessage =()=>{
