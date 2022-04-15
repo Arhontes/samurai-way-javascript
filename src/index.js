@@ -4,8 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "./Redux/reduxStore";
-import StoreContext from "./Redux/storeContext";
-import Provider from "./Redux/storeContext";
+import {Provider} from "react-redux";
 
 
 let rerenderEntireTree=(props)=>{

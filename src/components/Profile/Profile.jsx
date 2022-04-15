@@ -1,6 +1,7 @@
 
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostsContainer from "./Myposts/MyPostsContainer";
+import {MyPostsContainer} from "./Myposts/MyPostsContainer";
+
 
 
 const Profile = (props) => {
